@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <!-- Chọn ghế -->
+    <div class="col-sm-6">
+      <ng-container *ngFor="let item of mangGhe; let index = index">
+        <app-ghe [ghe]="item" (eventChonGhe)="datGhe($event)"></app-ghe>
+        <br *ngIf="(index + 1) % 4 === 0" />
+      </ng-container>
+    </div>
+    <!-- Danh sách ghế đã đặt -->
+    <div class="col-sm-6">
+      <h3>Danh sach ghe ({{ mangGheDaDat.length }})</h3>
+      <div *ngFor="let item of mangGheDaDat">
+        Ghế: {{ item.SoGhe }} - Giá: {{ item.Gia }}$
+      </div>
+      <p [ngStyle]="{ fontWeight: 'bold' }">Tổng tiền: {{ tongTien() }}$</p>
+    </div>
+  </div>
+</div>

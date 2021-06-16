@@ -1,0 +1,7 @@
+<h1>Oneway binding</h1>
+<p>{{ fullname }} - {{age}}</p>
+<!-- property binding -->
+<!-- # là id -->
+<input type="text" [value]="fullname" #thamSo>
+<!-- Thay onclick => (click) -->
+<button class="btn btn-success" (click)="eventBinding(thamSo.value)">Event Binding</button>
